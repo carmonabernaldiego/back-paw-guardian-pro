@@ -13,8 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
-  id          Int     @id @default(autoincrement())
-  title       String
-  description String?
+model Sensor {
+  id             Int      @id @default(autoincrement())
+  tipo_sensor    String
+  valor          Float // Asumiendo que el valor puede ser un número decimal, usa Float. Si no, ajusta el tipo según necesites.
+  fecha_creacion DateTime @default(now())
 }
